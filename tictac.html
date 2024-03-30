@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="tictac.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="#" class="logo">Tic Tac Toe</a>
+</header>
+
+<div class="container">
+    <h2>Tic Tac Toe</h2>
+    <div id="board">
+        <table class="board">
+            <tr>
+                <td class="cell" onclick="makeMove(0, 0)"></td>
+                <td class="cell" onclick="makeMove(0, 1)"></td>
+                <td class="cell" onclick="makeMove(0, 2)"></td>
+            </tr>
+            <tr>
+                <td class="cell" onclick="makeMove(1, 0)"></td>
+                <td class="cell" onclick="makeMove(1, 1)"></td>
+                <td class="cell" onclick="makeMove(1, 2)"></td>
+            </tr>
+            <tr>
+                <td class="cell" onclick="makeMove(2, 0)"></td>
+                <td class="cell" onclick="makeMove(2, 1)"></td>
+                <td class="cell" onclick="makeMove(2, 2)"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="message"></div>
+
+    <!-- Background music -->
+<audio id="backgroundMusic" src="tictac background music.mp4" preload="auto" autoplay loop></audio>
+<!-- Audio elements for X and O sounds -->
+<audio id="soundX" src="tictac hehe.mp4"></audio>
+<audio id="soundO" src="tictac toinks for O.mp4"></audio>
+<!-- Sound for player X win -->
+<audio id="playerXWinSound" src="player loose.mp4"></audio>
+<!-- Sound for player O win -->
+<audio id="playerOWinSound" src="player o winds.mp4"></audio>
+
+</div>
+
+<script src="tictac.js"></script> <!-- Your JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,222 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans';
+}
+
+body {
+    min-height: 100vh;
+    background: url('Hacker.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Make the background image fixed */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: seagreen; /* Change background color to seagreen */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    text-align: center;
+    color: #fff;
+}
+
+.logo {
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.navbar {
+    margin-top: 10px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.board {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed; /* Fix the table layout to prevent shrinking */
+    margin: 0 auto; /* Center the game board horizontally */
+}
+
+.board td {
+    border: 1px solid #ddd;
+    height: 100px;
+    text-align: center;
+    font-size: 36px;
+    cursor: pointer;
+    min-width: 100px; /* Ensure minimum width for the cells */
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.o-symbol {
+    color: green; /* Set the color of the O symbol to green */
+}
+
+.hacker-icon {
+    color: red; /* Set the color of the hacker icon to red */
+}
+
+.main-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Align items vertically */
+}
+
+.main-content {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    max-width: 80%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+    z-index: 999; /* Ensure it's above other elements */
+}
+
+
+
+.Parents {
+    display: none; /* Initially hide the Parents section */
+    position: fixed; /* Position it fixed */
+    top: 56%; /* Align it vertically */
+    left: 50%; /* Align it horizontally */
+    transform: translate(-50%, -50%); /* Center it */
+    max-width: 80%; /* Limit its width */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    padding: 28px; /* Add padding to the content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Optional: Add a white shadow effect */
+    color: #fff; /* White text color */
+    font-size: 25px; /* Font size */
+    font-weight: 400; /* Normal font weight */
+    text-align: left; /* Left-align text */
+    z-index: 999; /* Ensure it's above other elements */
+    overflow-y: auto; /* Add scroll bars if content exceeds the height */
+    max-height: 80%; /* Limit its height */
+}
+
+.Parents h2 {
+    font-size: 35px;
+    margin-bottom: 15px; /* Adjusted margin */
+}
+
+
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Animation for dropdown content */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
+    min-width: 160px;
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding-left: 0; /* Remove left padding */
+    animation: slideInDown 0.5s forwards; /* Apply animation */
+    top: calc(100% + 20px); /* Position below the game nav */
+    left: 0; /* Align with the starting letter of the games */
+}
+
+.dropdown.active .dropdown-content {
+    display: block; /* Display the dropdown content when the 'active' class is applied to the parent */
+}
+
+.dropdown-content a {
+    color: white; /* Text color changed to white for readability */
+    padding: 8px 16px; /* Adjusted padding */
+    text-decoration: none;
+    display: block;
+    text-align: center; /* Center the text horizontally */
+    line-height: 30px; /* Center the text vertically */
+    transition: background-color 0.3s; /* Smooth transition */
+    font-size: 13px; /* Adjusted font size */
+    margin-left: 0; /* Remove left margin */
+}
+
+
+.dropdown-content a:hover {
+    background-color: #333; /* Darken the background color on hover */
+}
+
+/* Separate boxes */
+.dropdown-content a:not(:last-child) {
+    border-bottom: 1px solid #555; /* Adjusted border color for contrast */
+}
+
+
+

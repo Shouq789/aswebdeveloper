@@ -1,0 +1,61 @@
+body {
+    min-height: 100vh;
+    background: url(snake.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Make the background image fixed */
+    overflow: hidden; /* Prevent scrolling */
+    font-family: 'Lucida Sans', sans-serif;
+    text-align: center;
+}
+
+#score {
+    font-size: 24px;
+}
+
+#snake-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height of viewport */
+}
+
+#instructions {
+    width: 45%; /* Take up 45% of the container */
+    padding: 20px; /* Add padding for spacing */
+    margin-right: 10px; /* Add margin to the right for separation */
+    text-align: center; /* Align text to the left */
+}
+
+#instructions h2 {
+    margin-bottom: 10px; /* Add margin below the heading */
+}
+
+#instructions p {
+    margin-bottom: 5px; /* Add margin below each paragraph */
+    font-size: 20;
+}
+
+
+#game-container {
+    width: 45%; /* Take up 45% of the container */
+    text-align: center; /* Center the game container content */
+    margin-left: 10px; /* Add margin to the left for separation */
+    margin-right: 550px; /* Add margin to the right for space */
+}
+
+#snake-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#score {
+    font-size: 24px;
+}
+
+

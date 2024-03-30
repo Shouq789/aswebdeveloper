@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Webpage Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+    <a href="#" class="logo">Cyber Security</a>
+    <nav class="navbar">
+        <a href="#" class="nav-link" id="parent-link">Parents</a>
+        <div class="dropdown" id="games-dropdown">
+            <a href="#" class="nav-link" onclick="toggleDropdown('games-dropdown-content')">Games</a>
+            <div class="dropdown-content" id="games-dropdown-content">
+                <a href="tictac.html" onclick="showGame('tictac')">Tic Tac Toe</a>
+                <a href="snake.html" onclick="showGame('snake')">Snake</a>
+                <a href="pacman.html" onclick="showGame('pacman')">Pac-man</a>
+            </div>
+        </div>
+        <a href="https://password.kaspersky.com/en/" class="nav-link">Password</a>
+        <a href="ratings.html" target="_self" class="nav-link">Ratings</a>
+        <a href="quiz.html" target="_self" class="nav-link">Q&A</a>
+        <div class="dropdown" id="videos-dropdown">
+            <a href="#" class="nav-link" onclick="toggleDropdown('videos-dropdown-content')">Videos</a>
+            <div class="dropdown-content" id="videos-dropdown-content">
+                <a href="#" onclick="openVideo('https://youtu.be/WNVTGTrWcvw?si=M8Zo7egvZ--HJfin')">Video 1</a>
+                <a href="#" onclick="openVideo('https://youtube.com/watch?v=YitHISP0Isk&feature=shared')">Video 2</a>
+                <a href="#" onclick="openVideo('https://youtu.be/9U-JgdUkaTQ?si=xuNGQw8_HbVaSYRF')">Video 3</a>
+                <a href="#" onclick="openVideo('https://youtu.be/sdEIAeu2_ms?si=Hi9pN37iE7ZLHnx1')">Video 4</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    
+    <div id="tictac-content" style="display: none;">
+        <!-- Content for Tic Tac Toe game -->
+        <!-- You can place your Tic Tac Toe game content here -->
+        <h1>Tic Tac Toe Game</h1>
+        <p>This is where the Tic Tac Toe game content goes.</p>
+    </div>
+
+    <div id="dropdown2-content" style="display: none;">
+        <!-- Content for Dropdown 2 -->
+        <!-- You can place content for Dropdown 2 here -->
+        <h1>Dropdown 2 Content</h1>
+        <p>This is where the content for Dropdown 2 goes.</p>
+    </div>
+
+    <div id="dropdown3-content" style="display: none;">
+        <!-- Content for Dropdown 3 -->
+        <!-- You can place content for Dropdown 3 here -->
+        <h1>Dropdown 3 Content</h1>
+        <p>This is where the content for Dropdown 3 goes.</p>
+    </div>
+    
+    
+    <header class="main-page">
+        <div class="main-content">
+            <h1>What is cybersecurity for kids?</h1>
+            <p>Simply put, cybersecurity is everything that is directly related to a person’s protection online. 
+            You can tell your child to think of it as the police who are tasked to defend a bank from being robbed. 
+            Except, in this case, the “police” are cybersecurity tools like anti-virus software and the “bank” is their device.
+            Phishing is a tactic that cyber criminals use to steal personal and financial information from their targets. It’s one of the most common cyber threats to Canadians today. 
+            While phishing  typically happens over email or text messages (which is called smishing), it can happen just about anywhere online.
+            When it comes to the internet, not every piece of information needs to be stolen for a criminal to get access to it. If kids aren’t careful with what they share online, they could be doing a cyber criminal’s work for them.</p>
+            <p>Malware, short for malicious software , is a type of program that infects your computer or phone with the intention of causing harm. Malware  is used to damage or destroy your device, allow cyber criminals to spy on you, steal your personal information or hold your files for ransom.  </p>
+        </div>
+    </header>
+            
+    <div class="toggle-content">
+        <div class="content" id="content">
+            <section class="Parents" style="display: none;">
+                <h2>To Beloved Parents!</h2>
+                <p>Practical suggestions for parents and carers to support children and young people’s wellbeing online include:
+                Support and engage with your child’s online life. Discuss the benefits and the risks and what can be done to protect ourselves
+                Encourage open communication without judgement to ensure children share achievements, feelings including mistakes or fears
+                Provide guidance and expectations which are age appropriate. Controls that are too tight make young people feel ‘different’ from their peers which can lead to socialisation however there needs to be a balance with ensuring children have guidance and are aware of expectations and risks and what to do
+                Consider what behaviour you model. As adults it is easy to spend hours on the internet accessing work emails, searching for products, reading the news, playing games without realising the passing of time. Children and young people access different material from adults but often mimic parental behaviour
+                Seek help and guidance if you are unsure about your child’s online or offline behaviour from available websites (see below) or your child’s school or college. 
+                Research into the impact of online behaviour on offline behaviour is very varied, many suggesting the impact is very individualised therefore any concerning changes in behaviour online or offline need to be followed up and the young person supported..</p>
+            </section>
+        </div>
+    </div>
+
+    <div id="game-container"> <!-- Replace this div with the content from snake.html -->
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+    </div>
+
+    <script src="snake.js"></script> <!-- Link to snake.js -->
+    <script>
+        // Function to toggle the visibility of the game content
+        function showGame(game) {
+            // Hide all game content sections
+            var gameContents = document.querySelectorAll('.game-content');
+            gameContents.forEach(function(element) {
+                element.style.display = 'none';
+            });
+
+            // Show the selected game content
+            var selectedGameContent = document.getElementById(game + '-content');
+            if (selectedGameContent) {
+                selectedGameContent.style.display = 'block';
+            }
+        }
+
+        // Function to toggle the visibility of the game dropdown menu
+        document.getElementById('games-dropdown').addEventListener('click', function(event) {
+            var dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('active'); // Toggle the 'active' class on the dropdown
+            event.stopPropagation(); // Prevent the click event from bubbling up to the document
+        });
+
+        // Close the dropdown menu when clicking outside of it
+        document.addEventListener('click', function(event) {
+            var dropdown = document.querySelector('.dropdown');
+            if (dropdown.classList.contains('active') && !event.target.closest('.dropdown')) {
+                dropdown.classList.remove('active'); // Remove the 'active' class if clicked outside the dropdown
+            }
+        });
+
+        // Function to toggle the visibility of the Parents section
+        document.getElementById('parent-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            var parentsSection = document.querySelector('.Parents');
+            var contentContainer = document.querySelector('.content');
+            parentsSection.style.display = parentsSection.style.display === 'none' ? 'block' : 'none'; // Toggle display
+            if (parentsSection.style.display === 'block') {
+                contentContainer.style.background = 'rgba(0, 0, 0, 0.8)'; // Set background when Parents section is visible
+                document.querySelector('.main-content').style.display = 'none'; // Hide main content when Parents section is visible
+            } else {
+                contentContainer.style.background = 'none'; // Remove background when Parents section is hidden
+                document.querySelector('.main-content').style.display = 'block'; // Show main content when Parents section is hidden
+            }
+            event.stopPropagation(); // Prevent the click event from bubbling up to the document
+        });
+
+        // Function to hide the Parents section when clicking anywhere else on the document
+        document.addEventListener('click', function(event) {
+            var parentsSection = document.querySelector('.Parents');
+            var contentContainer = document.querySelector('.content');
+            if (parentsSection.style.display === 'block' && !event.target.closest('.navbar')) {
+                parentsSection.style.display = 'none';
+                contentContainer.style.background = 'none'; // Remove background when Parents section is hidden
+                document.querySelector('.main-content').style.display = 'block'; // Show main content when Parents section is hidden
+            }
+        });
+
+        // Function to toggle the visibility of the game dropdown menu
+    function toggleDropdown(dropdownId) {
+        var dropdownContent = document.getElementById(dropdownId);
+        if (dropdownContent.style.display === 'block') {
+            dropdownContent.style.display = 'none';
+        } else {
+            dropdownContent.style.display = 'block';
+        }
+    }
+
+    // Function to open the video link in the same page
+    function openVideo(videoLink) {
+        window.location.href = videoLink;
+    }
+    </script>
+</body>
+</html>

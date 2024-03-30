@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    min-height: 100vh;
+    background: url(tictac.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Make the background image fixed */
+    overflow: hidden; /* Prevent scrolling */
+    font-family: 'Lucida Sans', sans-serif;
+    text-align: center;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar {
+    margin-top: 10px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+.board {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.board td {
+    border: 1px solid #ddd;
+    height: 100px;
+    text-align: center;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.o-symbol {
+    color: green; /* Set the color of the O symbol to green */
+}
+
+.hacker-icon {
+    color: red; /* Set the color of the hacker icon to red */
+}
+
+.board td {
+    border: 1px solid #ddd;
+    height: 100px;
+    text-align: center;
+    font-size: 36px;
+    cursor: pointer;
+    min-width: 100px; /* Ensure minimum width for the cells */
+}
+
+.board {
+    table-layout: fixed; /* Fix the table layout to prevent shrinking */
+    width: 300px; /* Set the fixed width of the table */
+}
+
+.container {
+    max-width: 400px; /* Adjust the max-width of the container as needed */
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.board {
+    table-layout: fixed; /* Fix the table layout to prevent shrinking */
+    width: 300px; /* Set the fixed width of the table */
+    margin: 0 auto; /* Center the game board horizontally */
+}
